@@ -1,0 +1,43 @@
+{
+    "query": {
+        "match": {
+            "keyword": "Tôi muốn trở thành 1 Back-end Developer."
+        }
+    },
+    "response": {
+        "took": 69,
+        "timed_out": false,
+        "_shards": {
+            "total": 5,
+            "successful": 5,
+            "skipped": 0,
+            "failed": 0
+        },
+        "hits": {
+            "total": 2,
+            "max_score": 0.9808292,
+            "hits": [
+                {
+                    "_index": "elastic_keywords",
+                    "_type": "my_type",
+                    "_id": "2",
+                    "_score": 0.9808292,
+                    "_source": {
+                        "id": 2,
+                        "keyword": "Back-end"
+                    }
+                },
+                {
+                    "_index": "elastic_keywords",
+                    "_type": "my_type",
+                    "_id": "1",
+                    "_score": 0.2876821,
+                    "_source": {
+                        "id": 1,
+                        "keyword": "Developer"
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "settings": {
+        "analysis": {
+            "char_filter": {
+                "hyphen_mapping": {
+                    "type": "mapping",
+                    "mappings": [
+                        "-=>"
+                    ]
+                }
+            },
+            "analyzer": {
+                "ctsa_analyzer_keyword": {
+                    "type": "custom",
+                    "tokenizer": "keyword",
+                    "filter": [
+                        "asciifolding",
+                        "lowercase"
+                    ],
+                    "char_filter": [
+                        "hyphen_mapping"
+                    ]
+                },
+                "ctsa_analyzer_shingle": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [
+                        "asciifolding",
+                        "lowercase",
+                        "shingle"
+                    ],
+                    "char_filter": [
+                        "hyphen_mapping"
+                    ]
+                }
+            }
+        }
+    },
+    "mappings": {
+        "ctsa_type": {
+            "properties": {
+                "keyword": {
+                    "type": "text",
+                    "analyzer": "ctsa_analyzer_keyword",
+                    "search_analyzer": "ctsa_analyzer_shingle"
+                }
+            }
+        }
+    }
+}
